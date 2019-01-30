@@ -1,3 +1,34 @@
-<p>
-  navbar works!
-</p>
+<!--On mobile device-->
+<mat-toolbar class="navbar">
+  <mat-toolbar-row>
+
+    <button mat-icon-button>
+      <img src="../../../../assets/img/banner-ico.png" class="header-logo">
+    </button>
+
+    <span class="header-title"> Angularfy </span>
+
+    <div class="header-buttons-container">
+      <div class="header-buttons">
+
+        <div [routerLink]="['/home']" class="pointer header-buttons-content" [routerLinkActive]="['active-link']">
+          <button mat-icon-button class="header-buttons-icon">
+              <mat-icon>home</mat-icon>
+            </button>
+            <span class="header-buttons-text" >Inicio</span>
+          </div>
+       
+          <div [routerLink]="['/search']" class="pointer header-buttons-content" [routerLinkActive]="['active-link']">
+            <button mat-icon-button class="header-buttons-icon">
+              <mat-icon>home</mat-icon>
+            </button>
+                <span  class="header-buttons-text" >Buscar</span>            
+          </div>        
+      </div>
+
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+<!-- On desktop-->
