@@ -1,3 +1,28 @@
-<p>
-  search works!
-</p>
+<section class="mat-typography">
+    <app-loading *ngIf="isLoading" ></app-loading>
+    <div class="search-container" *ngIf="!isLoading">
+    <div class="artists">
+      <h1 class="list-title">Artistas</h1>
+      <div *ngFor="let artist of artists" class="artist-item pointer" (click)="goToArtist(artist.id)"> 
+              <ngx-avatar [src]="artist.images | noimage"></ngx-avatar>
+              
+        <p class="artist-name">
+          {{artist.name}}
+        </p>
+        </div>
+
+    </div>
+    <div class="tracks">
+      <h1 class="list-title">Canciones</h1>
+      <div *ngFor="let track of tracks" class="track-item pointer">  
+          
+          <ngx-avatar [src]="track.images | noimage"></ngx-avatar>
+
+        <p class="track-name">
+          {{track.name}}
+        </p>
+        <p *ngFor="let artist of track.album.artists">{{" "}} °{{artist.name}}°</p>
+      </div>
+    </div>
+  </div>
+</section>

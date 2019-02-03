@@ -1,0 +1,18 @@
+<section class="mat-typography">
+    <div class="album-container"> 
+        <div class="album-image-container">
+            <img [src]="album.images | noimage" class="album-image"/>
+            <div class="play"><img class="play-icon" src="../../../assets/img/play.png" /> </div>
+        </div>
+        <div class="album-name">
+            {{album.name | titlecase }}
+        </div>
+        
+        <div class="album-artists-container">
+            <div *ngFor="let artist of album.artists" class="album-artist-name"
+             (click)="goToArtist(artist.id)">
+                 ° {{artist.name}} °
+            </div>
+        </div>
+    </div>
+</section>

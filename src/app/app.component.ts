@@ -10,10 +10,4 @@ export class AppComponent {
   strDevice = false;
   scrHeight: any;
 
-  // Check resize window
-  // @HostListener('window:resize', ['$event'])
-  // getScreenSize(event?) {
-  //       this.scrHeight = window.innerHeight;
-  // }
-
 }

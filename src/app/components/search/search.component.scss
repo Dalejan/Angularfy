@@ -1,0 +1,58 @@
+.pointer{
+    cursor: pointer;
+}
+.search-container{
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    padding-top: 4.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    .list-title{
+        border-bottom: 1px white solid;
+    }
+
+    .artists{
+        .artist-item{
+            display: flex;
+            margin: 1rem;
+            align-items: center;
+            border-bottom: 1px grey solid;
+            padding-bottom: 6px;
+            .artist-name{
+                margin-left: 2rem;
+            }
+        }
+    }
+    .tracks{
+        .track-item{
+            display: flex;
+            margin: 1rem;
+            align-items: center;
+            border-bottom: 1px grey solid;
+            padding-bottom: 6px;
+            .track-name{
+                margin-left: 2rem;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 640px) {
+    .search-container{
+
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .search-container{
+
+    padding-left: 10.5rem;
+    padding-right: 10.5rem;
+    }
+  }

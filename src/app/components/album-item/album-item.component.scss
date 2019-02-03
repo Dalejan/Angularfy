@@ -1,0 +1,34 @@
+.album-container{
+    .album-image-container{
+        position: relative;
+        .album-image{
+            max-width: 10rem;
+            transition: all .3s ease-in-out;
+        }   
+        .album-image:hover{
+            cursor: pointer;
+            filter: grayscale(90%);
+        }
+        .play{
+            position : absolute;
+              display:none;
+              top:25%; 
+              width:4rem;
+              margin:0 auto; left:0px;
+              right:0px;
+              z-index:100;
+              .play-icon{
+                  width: 4rem;
+              }
+          }         
+    }
+    
+    .album-artist-name:hover{
+        cursor:pointer
+    }
+    .album-image-container:hover .play{
+        display:block;
+        cursor: pointer;
+    }
+}
+

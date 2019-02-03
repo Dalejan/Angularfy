@@ -1,11 +1,48 @@
-.menu-container{
+
+.master-container{
+  width: 100%;
+  .shapes-container{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #0000002b;
-} 
-.isActive{
-    position:initial
+  }
+  .shapes-container:before{
+    content: "";
+    border-radius: 62% 38% 70% 30% / 69% 36% 64% 31% ;
+    width: 70vmax;
+    height: 70vmax;
+    position: fixed;
+    background: #8080806e;
+    left: -20vmin;
+    top: -20vmin;
+    animation: morph 15s linear infinite alternate, spin 40s linear infinite;
+    z-index: -1;
+    will-change: border-radius, transform;
+    transform-origin: 55% 55%;
+    pointer-events: none;
+  }
+  .shapes-container:after{
+    content: "";
+    border-radius: 62% 38% 70% 30% / 69% 36% 64% 31%    ;
+    width: 20vmax;
+    height: 30vmax;
+    position: fixed;
+    background: #8080806e;
+    left: 60vmin;
+    top: 96vmin;
+    animation: morph 15s linear infinite alternate, spin 50s linear infinite reverse;
+    z-index: -1;
+    will-change: border-radius, transform;
+    transform-origin: 55% 55%;
+    pointer-events: none;
+  }
+}
+
+
+
+@media only screen and (min-width: 940px) {
+  .master-container{
+    .shapes-container:after{
+      left: 130vmin;
+      top: 65vmin;
+  }  
+}
 }

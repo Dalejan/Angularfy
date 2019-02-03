@@ -1,3 +1,41 @@
-<p>
-  artist-detail works!
-</p>
+<app-loading *ngIf="isLoading"></app-loading>
+<section class="mat-typography" *ngIf="!isLoading">
+
+  <div class="artist-container">
+    <div class="artist-image-container">
+      <div [className]="'artist-image'" [ngStyle]="{ 'background-image': 'url(' + artist.images[0].url  + ')'}"></div>
+      <!-- <img class="artist-image" [src]="artist.images | noimage" /> -->
+    </div>
+    <div class="artist-name-container">
+      <h1 class="artist-name">{{artist.name}}</h1>
+      <div class="artist-followers-container">
+        <p class="artist-followers">{{artist.followers.total | number}} Seguidores!</p>
+      </div>
+    </div>
+    <div class="table-head">
+        <h3> Imágen</h3>
+        <h3> Canción</h3>
+        <h3> Album</h3>
+        <h3> Preview</h3>
+      
+    </div>
+
+
+    <mat-list role="list" class="tracks-table">
+      <div class="track-item-container" *ngFor="let track of topTracks" role="listitem">
+
+        <img class="img-thumb" [src]="track.album.images | noimage" alt="...">
+        <div class="track-item-track">{{track.name}}</div>
+
+        <div class="track-item-album">{{track.album.name}}</div>
+        <div class="track-item-preview">
+          <!-- <audio [src]="track.preview_url" controls></audio> -->
+          <!-- <iframe [src]="https://open.spotify.com/embed/track/6trwNRKYjipVE9wUYSSG82" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+          <iframe [src]="track.uri | domseguro:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+      </div>
+    </mat-list> 
+  </div>
+
+</section>

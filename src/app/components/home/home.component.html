@@ -1,4 +1,7 @@
-<p>
-  home works!
-  <img src="../../../assets/img/banner-ico.png">
-</p>
+<div class="albums-container">
+
+  <app-loading *ngIf="isLoading"></app-loading>
+  <ng-container *ngIf="!isLoading">
+    <app-album-item  *ngFor="let album of releases" class="album" [album]="album"></app-album-item>
+  </ng-container>
+</div>

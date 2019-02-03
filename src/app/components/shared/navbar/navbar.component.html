@@ -1,29 +1,34 @@
-<!--On mobile device-->
-<mat-toolbar class="navbar">
+<mat-toolbar id="navbar">
   <mat-toolbar-row>
 
-    <button mat-icon-button>
+    <button mat-icon-button [routerLink]="['/home']" class="header-logo-container">
       <img src="../../../../assets/img/banner-ico.png" class="header-logo">
+      <span class="header-title"> Flay </span>
     </button>
 
-    <span class="header-title"> Angularfy </span>
 
     <div class="header-buttons-container">
       <div class="header-buttons">
 
         <div [routerLink]="['/home']" class="pointer header-buttons-content" [routerLinkActive]="['active-link']">
           <button mat-icon-button class="header-buttons-icon">
-              <mat-icon>home</mat-icon>
+            <mat-icon>home</mat-icon>
+          </button>
+          <span class="header-buttons-text">Inicio</span>
+        </div>
+
+        <div class="searchbar-container">
+          <div class=" header-buttons-content">
+            <button mat-icon-button class="header-buttons-icon" (click)="openSearchBar()">
+              <mat-icon>search</mat-icon>
             </button>
-            <span class="header-buttons-text" >Inicio</span>
           </div>
-       
-          <div [routerLink]="['/search']" class="pointer header-buttons-content" [routerLinkActive]="['active-link']">
-            <button mat-icon-button class="header-buttons-icon">
-              <mat-icon>home</mat-icon>
-            </button>
-                <span  class="header-buttons-text" >Buscar</span>            
-          </div>        
+          <mat-form-field class="header-buttons-text" >
+            <mat-icon>mode_search</mat-icon>
+            <input #term matInput placeholder="Buscar" (keyup)="search(term.value)">
+          </mat-form-field>
+
+        </div>
       </div>
 
     </div>
@@ -31,4 +36,3 @@
   </mat-toolbar-row>
 
 </mat-toolbar>
-<!-- On desktop-->

@@ -9,9 +9,19 @@ import { HomeComponent } from './components/home/home.component';
 import { ArtistDetailComponent } from './components/artist-detail/artist-detail.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 /**Angular material */
 import { MaterialModule } from './modules/material.module';
+/**Spotify service */
+import { SpotifyService } from './services/spotify.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AlbumItemComponent } from './components/album-item/album-item.component';
+
+/**Avatar */
+import { AvatarModule } from 'ngx-avatar';
+import { NoimagePipe } from './pies/noimage.pipe';
+import { DomseguroPipe } from './pies/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -19,14 +29,21 @@ import { MaterialModule } from './modules/material.module';
     HomeComponent,
     ArtistDetailComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+    AlbumItemComponent,
+    NoimagePipe,
+    DomseguroPipe,
+    LoadingComponent
+
   ],
   imports: [
     BrowserModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AvatarModule
   ],
-  providers: [],
+  providers: [SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
