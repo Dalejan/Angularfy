@@ -25,7 +25,7 @@
           </div>
           <mat-form-field class="header-buttons-text" >
             <mat-icon>mode_search</mat-icon>
-            <input #term matInput placeholder="Buscar" (keyup)="search(term.value)">
+            <input #term matInput placeholder="Buscar" (keyup.enter)="search(term.value)">
           </mat-form-field>
 
         </div>

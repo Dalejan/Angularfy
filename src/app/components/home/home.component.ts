@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotify.service';
-import { triggerAsyncId } from 'async_hooks';
 
 @Component({
   selector: 'app-home',
